@@ -47,7 +47,7 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 
-def funkyshin(question):
+def run(question):
     new_question = [question]
     new_question_vector = tfidf_vectorizer.transform(new_question)
     predicted_type = model.predict(new_question_vector)
@@ -62,7 +62,7 @@ def index():
 @app.route('/answer', methods=['POST'])
 def reverse():
     user_input = request.form['user_input']
-    reversed_text = funkyshin(user_input)[0]
+    reversed_text = run(user_input)[0]
     return render_template('result.html', reversed_text=reversed_text)
 
 if __name__ == '__main__':
