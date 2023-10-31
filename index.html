@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Attributer</title>
+</head>
+<body>
+    <h1>Question Attributer</h1>
+    <form method="post" action="/answer">
+        <input type="text" name="user_input" placeholder="Enter text...">
+        <input type="submit" value="Atrribute">
+    </form>
+    <p>This is trained on 500 bio, chem, and geo questions using sklearn. Accuracy: {{ accuracy }}</p>
+</body>
+</html>
